@@ -1,0 +1,31 @@
+a.primary-btn{
+    background:#d9e0f3;
+    padding:7px 20px;
+    text-align:center;
+    display:inline-block;
+    color:#0f0e0e;
+    border-radius:2px;
+    font-size:14px;
+    margin-top:5px;
+    width: 400px;
+    text-decoration: none;
+}
+a.primary-btn:hover{
+    background:#b3b4f0;
+    color:#070707
+}
+
+.table {
+    width: 400px;
+    text-align: center;
+    background-color: #a1a2ef;
+}
+
+.btn {
+    width: 500px;
+    background: #8788dd;
+    color: #0b0b0b;
+    text-decoration: none;
+    margin-left: 100px;
+
+}

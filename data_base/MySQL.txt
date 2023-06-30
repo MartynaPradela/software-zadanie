@@ -1,0 +1,72 @@
+DROP SCHEMA IF EXISTS `full-tennis`;
+CREATE SCHEMA `full-tennis`;
+USE `full-tennis`;
+
+CREATE TABLE IF NOT EXISTS `full-tennis`.`user` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(255) NOT NULL,
+  `last_name` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `phone` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) 
+ENGINE=InnoDB 
+AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `full-tennis`.`court` (
+`id` BIGINT(40) NOT NULL AUTO_INCREMENT,
+`court_nr` INTEGER NOT NULL,
+`free_time` VARCHAR(5) NOT NULL,
+PRIMARY KEY (`id`)
+)
+ENGINE=InnoDB
+AUTO_INCREMENT = 1;
+
+CREATE TABLE IF NOT EXISTS `full-tennis`.`reservation` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `court_id` BIGINT NOT NULL,
+  `user_id` BIGINT NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `k_user_id` (`user_id`),
+  CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `fk_court_id` FOREIGN KEY (`court_id`) REFERENCES `court` (`id`)
+) 
+ENGINE=InnoDB 
+AUTO_INCREMENT=1;
+
+INSERT INTO user(first_name, last_name, email, phone) VALUES ('Martyna', 'Pradela', 'pradela.martyna@gmail.com', '666381944');
+INSERT INTO user(first_name, last_name, email, phone) VALUES ('Martyna', 'Akapit', 'akapit.martyna@gmail.com', '123456789');
+INSERT INTO user(first_name, last_name, email, phone) VALUES ('Martyna', 'Ziemia', 'ziemia.martyna@gmail.com', '7373738298');
+INSERT INTO user(first_name, last_name, email, phone) VALUES ('Martyna', 'Java', 'java.martyna@gmail.com', '925384659');
+
+INSERT INTO court(court_nr, free_time) VALUES (1, '7:00');
+INSERT INTO court(court_nr, free_time) VALUES (1, '8:00');
+INSERT INTO court(court_nr, free_time) VALUES (1, '9:00');
+INSERT INTO court(court_nr, free_time) VALUES (1, '10:00');
+INSERT INTO court(court_nr, free_time) VALUES (1, '11:00');
+INSERT INTO court(court_nr, free_time) VALUES (1, '12:00');
+INSERT INTO court(court_nr, free_time) VALUES (1, '13:00');
+INSERT INTO court(court_nr, free_time) VALUES (1, '14:00');
+INSERT INTO court(court_nr, free_time) VALUES (1, '15:00');
+
+INSERT INTO court(court_nr, free_time) VALUES (2, '7:00');
+INSERT INTO court(court_nr, free_time) VALUES (2, '8:00');
+INSERT INTO court(court_nr, free_time) VALUES (2, '9:00');
+INSERT INTO court(court_nr, free_time) VALUES (2, '10:00');
+INSERT INTO court(court_nr, free_time) VALUES (2, '11:00');
+INSERT INTO court(court_nr, free_time) VALUES (2, '12:00');
+INSERT INTO court(court_nr, free_time) VALUES (2, '13:00');
+INSERT INTO court(court_nr, free_time) VALUES (2, '14:00');
+INSERT INTO court(court_nr, free_time) VALUES (2, '15:00');
+
+INSERT INTO court(court_nr, free_time) VALUES (3, '7:00');
+INSERT INTO court(court_nr, free_time) VALUES (3, '8:00');
+INSERT INTO court(court_nr, free_time) VALUES (3, '9:00');
+INSERT INTO court(court_nr, free_time) VALUES (3, '10:00');
+INSERT INTO court(court_nr, free_time) VALUES (3, '11:00');
+INSERT INTO court(court_nr, free_time) VALUES (3, '12:00');
+INSERT INTO court(court_nr, free_time) VALUES (3, '13:00');
+INSERT INTO court(court_nr, free_time) VALUES (3, '14:00');
+INSERT INTO court(court_nr, free_time) VALUES (3, '15:00');
+
+INSERT INTO reservation(court_id, user_id) VALUES (1,1);

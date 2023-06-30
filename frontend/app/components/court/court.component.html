@@ -1,0 +1,42 @@
+<table>
+    <thead>
+        <tr>
+            <th class="table">Kort 1</th>
+            <th class="table">Kort 2</th>
+            <th class="table">Kort 3</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let tempCourt of courts">
+            <td *ngIf="tempCourt.courtNumber == 1">
+                <a (click)="addToCart(tempCourt)" class="primary-btn"> {{ tempCourt.timeReservation }}</a>
+            </td> 
+            <td *ngIf="tempCourt.courtNumber == 1">
+                <a (click)="addToCart(tempCourt)" class="primary-btn"> {{ tempCourt.timeReservation }}</a>
+            </td>
+            <td *ngIf="tempCourt.courtNumber == 1">
+                <a (click)="addToCart(tempCourt)" class="primary-btn"> {{ tempCourt.timeReservation }}</a>
+            </td>
+            </tr>
+
+    </tbody>
+</table>
+
+<div class = "btn">
+    <a routerLink="/form">
+        <div>
+            <span>Przejdź do rezerwacji: Kort - {{ courtNumber }}, godzina - {{ courtTime }}</span>
+        </div>
+    </a>
+</div>
+<div class = "btn">
+    <a routerLink="/reservation">
+        <div>
+            <span>Pokaż wszystkie rezerwacje</span>
+        </div>
+    </a>
+</div>
+
+
+
